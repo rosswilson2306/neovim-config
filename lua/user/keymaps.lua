@@ -77,4 +77,14 @@ keymap("n", "<Leader>tw", ":set nowrap!<CR>", opts)
 keymap("n", "∆", ":m .+1<CR>==", opts)
 keymap("n", "˚", ":m .-2<CR>==", opts)
 
+-- Telescope
+keymap("n", "<c-p>", "<cmd>Telescope git_files<cr>", opts)
+keymap("n", "<c-f>", "<cmd>Telescope find_files<cr>", opts)
+keymap("n", "<Leader>g", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<Leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
+
+-- Nvim Tree
+keymap("n", "<c-t>", ":NvimTreeToggle<cr>", opts)
+
 -- TODO: few more in vimscript config related to plugins, look through
