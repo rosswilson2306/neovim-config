@@ -46,9 +46,11 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "tpope/vim-fugitive"
   use "tpope/vim-surround"
+  use "tpope/vim-commentary"
   use "mhinz/vim-signify"
   use "christoomey/vim-system-copy"
   use "folke/tokyonight.nvim"
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
