@@ -48,6 +48,7 @@ return packer.startup(function(use)
   use "tpope/vim-surround"
   use "tpope/vim-commentary"
   use "mhinz/vim-signify"
+  use "APZelos/blamer.nvim"
   use "christoomey/vim-system-copy"
   use "folke/tokyonight.nvim"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -57,6 +58,7 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  use "ThePrimeagen/harpoon"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

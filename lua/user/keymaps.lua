@@ -26,8 +26,6 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- TODO: remove when using other file explorer
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -76,6 +74,13 @@ keymap("n", "<Leader>tr", ":set relativenumber!<CR>", opts)
 keymap("n", "<Leader>tw", ":set nowrap!<CR>", opts)
 keymap("n", "∆", ":m .+1<CR>==", opts)
 keymap("n", "˚", ":m .-2<CR>==", opts)
+keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
+keymap("n", "]]", "<plug>(signify-next-hunk)", opts)
+keymap("n", "[[", "<plug>(signify-prev-hunk)", opts)
+keymap("n", "<Leader>tb", ":BlamerToggle<CR>", opts)
+
+-- Command
+-- keymap("c", "so<CR>", ":source ~/.config/nvm/init.lua<CR>", opts)
 
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope git_files<cr>", opts)
@@ -86,5 +91,13 @@ keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 
 -- Nvim Tree
 keymap("n", "<c-t>", ":NvimTreeToggle<cr>", opts)
+
+-- Harpoon
+keymap("n", "<Leader>h", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<Leader>a", ":lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<Leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
+keymap("n", "<Leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
+keymap("n", "<Leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<Leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
 
 -- TODO: few more in vimscript config related to plugins, look through
