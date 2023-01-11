@@ -3,6 +3,8 @@ local servers = {
 	"pyright",
 	"jsonls",
   "tsserver",
+  "eslint",
+  "tailwindcss"
 }
 
 local settings = {
