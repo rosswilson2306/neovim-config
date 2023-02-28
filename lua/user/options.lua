@@ -2,15 +2,9 @@
 
 local options = {
 -- my old settings
-  wrap = false,
-  scrolloff = 10,
-  sidescrolloff = 5,
   laststatus = 2, -- check options for this
   hidden = true, -- check on this
   softtabstop = 2,
-  shiftwidth = 2,
-  smartindent = true, -- possibly add autoindent as well
-  expandtab = true,
   showcmd = true,
 -- vim.opt.showmatch = true -- had this on but found annoying
   incsearch = true,
@@ -51,7 +45,7 @@ local options = {
   numberwidth = 4,                         -- set number column width to 2 {default 4}
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
-  scrolloff = 8,                           -- is one of my fav
+  scrolloff = 10,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
@@ -65,3 +59,5 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- automatically rebalance windows on vim resize
+vim.cmd "autocmd VimResized * :wincmd ="

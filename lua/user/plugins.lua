@@ -59,6 +59,8 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use "ThePrimeagen/harpoon"
+  use "mbbill/undotree"
+  use "christoomey/vim-tmux-navigator"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

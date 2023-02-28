@@ -1,10 +1,12 @@
 local servers = {
-	"sumneko_lua",
 	"pyright",
+  "lua_ls",
 	"jsonls",
   "tsserver",
   "eslint",
-  "tailwindcss"
+  "tailwindcss",
+  "cssls",
+  "solargraph"
 }
 
 local settings = {
