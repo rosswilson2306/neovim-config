@@ -82,6 +82,8 @@ keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed
 keymap("n", "]]", "<plug>(signify-next-hunk)", opts)
 keymap("n", "[[", "<plug>(signify-prev-hunk)", opts)
 keymap("n", "<Leader>tb", ":BlamerToggle<CR>", opts)
+keymap("n", "<Leader>ct", ":NvimTreeCollapse<CR>", opts)
+keymap("n", "<Leader>f", ":Format<CR>", opts)
 
 -- Command
 -- keymap("c", "so<CR>", ":source ~/.config/nvm/init.lua<CR>", opts)
@@ -92,6 +94,7 @@ keymap("n", "<c-f>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<Leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
+keymap("n", "<Leader>rf", "<cmd>Telescope lsp_references<cr>", opts)
 
 -- Nvim Tree
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
