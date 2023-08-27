@@ -11,9 +11,11 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier,
+		-- formatting.prettier,
 		formatting.stylua,
-		-- formatting.eslint_d,
+    -- diagnostics.solargraph,
+		formatting.eslint_d,
 		diagnostics.eslint_d,
+    formatting.rustfmt,
 	},
 })

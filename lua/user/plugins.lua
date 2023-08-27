@@ -45,10 +45,15 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "tpope/vim-fugitive"
-  use "tpope/vim-surround"
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({})
+    end
+  })
   use "tpope/vim-commentary"
   use "mhinz/vim-signify"
-  use "APZelos/blamer.nvim"
   use "christoomey/vim-system-copy"
   use "folke/tokyonight.nvim"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -61,6 +66,14 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
   use "mbbill/undotree"
   use "christoomey/vim-tmux-navigator"
+  use "ggandor/leap.nvim"
+  use({
+    'Wansmer/treesj',
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({--[[ your config ]]})
+    end,
+  })
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -71,15 +84,12 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
 
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- LSP diagnostics and code actions
+  use "simrat39/rust-tools.nvim"
 
   -- Treesitter
   use {

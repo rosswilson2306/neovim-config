@@ -27,10 +27,10 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<c-w>=", ":resize +2<CR>", opts)
+keymap("n", "<c-w>-", ":resize -2<CR>", opts)
+keymap("n", "<c-w>,", ":vertical resize -2<CR>", opts)
+keymap("n", "<c-w>.", ":vertical resize +2<CR>", opts)
 
 -- Zoom buffer
 keymap("n", "<Leader>-", ":wincmd _<cr>:wincmd \\|<cr>", opts)
@@ -81,12 +81,21 @@ keymap("n", "˚", ":m .-2<CR>==", opts)
 keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
 keymap("n", "]]", "<plug>(signify-next-hunk)", opts)
 keymap("n", "[[", "<plug>(signify-prev-hunk)", opts)
-keymap("n", "<Leader>tb", ":BlamerToggle<CR>", opts)
 keymap("n", "<Leader>ct", ":NvimTreeCollapse<CR>", opts)
 keymap("n", "<Leader>f", ":Format<CR>", opts)
+keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
 
 -- Command
 -- keymap("c", "so<CR>", ":source ~/.config/nvm/init.lua<CR>", opts)
+
+-- Fugitive
+keymap("n", "<c-g>", ":vertical G<cr>", opts)
+
+-- Leap
+keymap('n', 'z', '<Plug>(leap-forward-to)', opts)
+keymap('n', 'Z', '<Plug>(leap-backward-to)', opts)
+keymap('n', 'm', '<Plug>(leap-forward-till)', opts)
+keymap('n', 'M', '<Plug>(leap-backward-till)', opts)
 
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope git_files<cr>", opts)
@@ -95,6 +104,7 @@ keymap("n", "<Leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>rf", "<cmd>Telescope lsp_references<cr>", opts)
+keymap("n", "<Leader>*", "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
 
 -- Nvim Tree
 keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)

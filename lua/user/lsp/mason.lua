@@ -6,7 +6,8 @@ local servers = {
   "eslint",
   "tailwindcss",
   "cssls",
-  "solargraph"
+  "solargraph",
+  "rust_analyzer",
 }
 
 local settings = {
