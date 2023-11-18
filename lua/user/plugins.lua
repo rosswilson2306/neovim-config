@@ -65,6 +65,9 @@ require("lazy").setup({
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-cmdline", -- cmdline completions
       "saadparwaiz1/cmp_luasnip", -- snippet completions
+      'rafamadriz/friendly-snippets',
+      'dcampos/nvim-snippy',
+      'dcampos/cmp-snippy'
     },
   },
   -- LSP
