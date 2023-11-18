@@ -57,8 +57,7 @@ require("lazy").setup({
   },
   -- CMP
   {
-    "hrsh7th/nvim-cmp",
-    -- load cmp on InsertEnter
+    'hrsh7th/nvim-cmp',
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
