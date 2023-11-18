@@ -25,7 +25,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 
--- Resize with arrows
+-- Resize splits
 keymap("n", "<c-w>=", ":resize +2<CR>", opts)
 keymap("n", "<c-w>-", ":resize -2<CR>", opts)
 keymap("n", "<c-w>,", ":vertical resize -2<CR>", opts)
@@ -63,8 +63,6 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- my mappings
---
 -- Insert
 keymap("i", "<C-h>", "<esc>ha", opts)
 keymap("i", "<C-j>", "<esc>ja", opts)
@@ -80,12 +78,8 @@ keymap("n", "˚", ":m .-2<CR>==", opts)
 keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
 keymap("n", "]]", "<plug>(signify-next-hunk)", opts)
 keymap("n", "[[", "<plug>(signify-prev-hunk)", opts)
-keymap("n", "<Leader>ct", ":NvimTreeCollapse<CR>", opts)
 keymap("n", "<Leader>f", ":Format<CR>", opts)
 keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
-
--- Command
--- keymap("c", "so<CR>", ":source ~/.config/nvm/init.lua<CR>", opts)
 
 -- Fugitive
 keymap("n", "<c-g>", ":vertical G<cr>", opts)
@@ -105,8 +99,8 @@ keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>rf", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", "<Leader>*", "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
 
--- Nvim Tree
-keymap("n", "<Leader>e", ":NvimTreeToggle<cr>", opts)
+-- Neo Tree
+keymap("n", "<Leader>e", ":Neotree position=current toggle=true reveal=true<cr>", opts)
 
 -- Harpoon
 keymap("n", "<Leader>h", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
@@ -115,8 +109,7 @@ keymap("n", "<Leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<Leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
 keymap("n", "<Leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
 keymap("n", "<Leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
+keymap("n", "<Leader>5", ":lua require('harpoon.ui').nav_file(5)<CR>", opts)
 
 -- UndoTree
 keymap("n", "<Leader>u", "<cmd>UndotreeToggle<cr>", opts)
-
--- TODO: few more in vimscript config related to plugins, look through
