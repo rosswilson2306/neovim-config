@@ -84,9 +84,6 @@ keymap("n", "<Leader>ct", ":NvimTreeCollapse<CR>", opts)
 keymap("n", "<Leader>f", ":Format<CR>", opts)
 keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
 
--- Command
--- keymap("c", "so<CR>", ":source ~/.config/nvm/init.lua<CR>", opts)
-
 -- Fugitive
 keymap("n", "<c-g>", ":vertical G<cr>", opts)
 
