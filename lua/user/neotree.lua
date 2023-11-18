@@ -7,11 +7,17 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.api.nvim_create_autocmd("VimEnter", {
-	command = "set nornu nonu | Neotree toggle current",
-})
-
 neo_tree.setup({
+  event_handlers = {
+    event = "file_opened",
+      handler = function(file_path)
+        -- auto close
+        -- vimc.cmd("Neotree close")
+        -- OR
+        -- require("neo-tree.command").execute({ action = "close" })
+        require("neo-tree").close_all()
+      end
+  },
 	close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
 	popup_border_style = "rounded",
 	enable_git_status = true,
@@ -62,11 +68,11 @@ neo_tree.setup({
 				added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
 				modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
 				deleted = "✖", -- this can only be used in the git_status source
-				renamed = "󰁕", -- this can only be used in the git_status source
+				renamed = "", -- this can only be used in the git_status source
 				-- Status type
 				untracked = "",
 				ignored = "",
-				unstaged = "󰄱",
+				unstaged = "",
 				staged = "",
 				conflict = "",
 			},
@@ -161,9 +167,9 @@ neo_tree.setup({
 	filesystem = {
 		filtered_items = {
 			visible = false, -- when true, they will just be displayed differently than normal items
-			hide_dotfiles = true,
-			hide_gitignored = true,
-			hide_hidden = true, -- only works on Windows for hidden files/directories
+			hide_dotfiles = false,
+			hide_gitignored = false,
+			hide_hidden = false, -- only works on Windows for hidden files/directories
 			hide_by_name = {
 				--"node_modules"
 			},

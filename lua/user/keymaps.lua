@@ -78,17 +78,17 @@ keymap("n", "˚", ":m .-2<CR>==", opts)
 keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
 keymap("n", "]]", "<plug>(signify-next-hunk)", opts)
 keymap("n", "[[", "<plug>(signify-prev-hunk)", opts)
-keymap("n", "<Leader>f", ":Format<CR>", opts)
+keymap("n", "<Leader>ff", ":Format<CR>", opts)
 keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
 
 -- Fugitive
 keymap("n", "<c-g>", ":vertical G<cr>", opts)
 
 -- Leap
-keymap('n', 'z', '<Plug>(leap-forward-to)', opts)
-keymap('n', 'Z', '<Plug>(leap-backward-to)', opts)
-keymap('n', 'm', '<Plug>(leap-forward-till)', opts)
-keymap('n', 'M', '<Plug>(leap-backward-till)', opts)
+keymap("n", "z", "<Plug>(leap-forward-to)", opts)
+keymap("n", "Z", "<Plug>(leap-backward-to)", opts)
+keymap("n", "m", "<Plug>(leap-forward-till)", opts)
+keymap("n", "M", "<Plug>(leap-backward-till)", opts)
 
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope git_files<cr>", opts)
@@ -101,6 +101,7 @@ keymap("n", "<Leader>*", "<cmd>lua require('telescope.builtin').grep_string()<cr
 
 -- Neo Tree
 keymap("n", "<Leader>e", ":Neotree position=current toggle=true reveal=true<cr>", opts)
+keymap("n", "<Leader>fg", ":Neotree float git_status<CR>", opts)
 
 -- Harpoon
 keymap("n", "<Leader>h", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
