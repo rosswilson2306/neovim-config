@@ -98,6 +98,8 @@ keymap("n", "<Leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>rf", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", "<Leader>*", "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
+keymap("n", "<Leader>w", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", opts)
+keymap("n", "<Leader>cw", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", opts)
 
 -- Neo Tree
 keymap("n", "<Leader>e", ":Neotree position=current toggle=true reveal=true<cr>", opts)

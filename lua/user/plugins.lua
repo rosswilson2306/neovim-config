@@ -24,6 +24,7 @@ require("lazy").setup({
   "folke/tokyonight.nvim",
   "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
   "ThePrimeagen/harpoon",
+  "ThePrimeagen/git-worktree.nvim",
   "mbbill/undotree",
   "ggandor/leap.nvim",
   "nvim-telescope/telescope.nvim",

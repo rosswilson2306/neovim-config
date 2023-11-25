@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 telescope.load_extension('media_files')
+telescope.load_extension("git_worktree")
 
 local actions = require("telescope.actions")
 
@@ -41,7 +42,7 @@ telescope.setup {
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["œ"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
         ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
       },
@@ -74,27 +75,28 @@ telescope.setup {
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
+        ["œ"] = actions.send_selected_to_qflist + actions.open_qflist,
 
         ["?"] = actions.which_key,
       },
     },
   },
   -- pickers = {
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
+  -- Default configuration for builtin pickers goes here:
+  -- picker_name = {
+  --   picker_config_key = value,
+  --   ...
+  -- }
+  -- Now the picker_config_key will be applied every time you call this
+  -- builtin picker
   -- },
   extensions = {
     media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = {"png", "webp", "jpg", "jpeg"},
-        find_cmd = "rg" -- find command (defaults to `fd`)
-      }
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = { "png", "webp", "jpg", "jpeg" },
+      find_cmd = "rg"   -- find command (defaults to `fd`)
+    }
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
