@@ -79,7 +79,9 @@ keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed
 keymap("n", "]]", "<plug>(signify-next-hunk)", opts)
 keymap("n", "[[", "<plug>(signify-prev-hunk)", opts)
 keymap("n", "<Leader>ff", ":Format<CR>", opts)
-keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
+-- keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
+keymap("n", "<Leader>j", ":cnext<CR>", opts)
+keymap("n", "<Leader>k", ":cprev<CR>", opts)
 
 -- Fugitive
 keymap("n", "<c-g>", ":vertical G<cr>", opts)

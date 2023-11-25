@@ -33,11 +33,11 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
-  {
-    'Wansmer/treesj',
-    keys = { '<Leader>tt', '<space>m' },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-  },
+  -- {
+  --   'Wansmer/treesj',
+  --   keys = { '<Leader>tt', '<space>m' },
+  --   dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  -- },
   {
     "kylechui/nvim-surround",
     event = "VeryLazy",
