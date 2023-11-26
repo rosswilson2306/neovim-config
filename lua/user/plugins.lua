@@ -18,7 +18,7 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim",
   "tpope/vim-fugitive",
   "tpope/vim-commentary",
-  "mhinz/vim-signify",
+  "lewis6991/gitsigns.nvim",
   "christoomey/vim-system-copy",
   "christoomey/vim-tmux-navigator",
   "folke/tokyonight.nvim",

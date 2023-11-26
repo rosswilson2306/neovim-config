@@ -76,8 +76,6 @@ keymap("n", "<Leader>tw", ":set nowrap!<CR>", opts)
 keymap("n", "∆", ":m .+1<CR>==", opts)
 keymap("n", "˚", ":m .-2<CR>==", opts)
 keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
-keymap("n", "]]", "<plug>(signify-next-hunk)", opts)
-keymap("n", "[[", "<plug>(signify-prev-hunk)", opts)
 keymap("n", "<Leader>ff", ":Format<CR>", opts)
 -- keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
 keymap("n", "<Leader>j", ":cnext<CR>", opts)
