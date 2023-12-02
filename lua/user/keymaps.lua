@@ -81,6 +81,7 @@ keymap("n", "<Leader>ff", ":Format<CR>", opts)
 keymap("n", "<Leader>j", ":cnext<CR>", opts)
 keymap("n", "<Leader>k", ":cprev<CR>", opts)
 keymap("n", "cpb", ":let @+=expand('%')<CR>", opts)
+keymap("n", "gtc", ":G blame<CR><CR>", { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
 
 -- Fugitive
 keymap("n", "<c-g>", ":vertical G<cr>", opts)
@@ -98,7 +99,7 @@ keymap("n", "<Leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>rf", "<cmd>Telescope lsp_references<cr>", opts)
-keymap("n", "<C-m>", "<cmd>Telescope keymaps<cr>", opts)
+keymap("n", "<Leader>m", "<cmd>Telescope keymaps<cr>", opts)
 keymap("n", "<Leader>*", "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
 keymap("n", "<Leader>w", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", opts)
 keymap("n", "<Leader>cw", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", opts)
