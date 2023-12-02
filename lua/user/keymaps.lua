@@ -80,6 +80,7 @@ keymap("n", "<Leader>ff", ":Format<CR>", opts)
 -- keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
 keymap("n", "<Leader>j", ":cnext<CR>", opts)
 keymap("n", "<Leader>k", ":cprev<CR>", opts)
+keymap("n", "cpb", ":let @+=expand('%')<R>", opts)
 
 -- Fugitive
 keymap("n", "<c-g>", ":vertical G<cr>", opts)
