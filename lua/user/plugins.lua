@@ -22,7 +22,7 @@ require("lazy").setup({
   "christoomey/vim-system-copy",
   "christoomey/vim-tmux-navigator",
   "folke/tokyonight.nvim",
-  "windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
+  "windwp/nvim-autopairs",
   "ThePrimeagen/harpoon",
   "ThePrimeagen/git-worktree.nvim",
   "mbbill/undotree",
@@ -56,7 +56,7 @@ require("lazy").setup({
     branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     }
   },
@@ -68,8 +68,8 @@ require("lazy").setup({
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-cmdline", -- cmdline completions
-      "saadparwaiz1/cmp_luasnip", -- snippet completions
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
       'rafamadriz/friendly-snippets',
       'dcampos/nvim-snippy',
       'dcampos/cmp-snippy'
