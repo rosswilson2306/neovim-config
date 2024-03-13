@@ -5,4 +5,5 @@ end
 
 treejs.setup({
   max_join_length = 300,
+  use_default_keymaps = false,
 })

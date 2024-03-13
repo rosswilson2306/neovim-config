@@ -77,7 +77,7 @@ keymap("n", "∆", ":m .+1<CR>==", opts)
 keymap("n", "˚", ":m .-2<CR>==", opts)
 keymap("n", "<Leader>ce", "v$hcp", { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
 keymap("n", "<Leader>ff", ":Format<CR>", opts)
--- keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
+keymap("n", "<Leader>tt", ":TSJToggle<CR>", opts)
 keymap("n", "<Leader>j", ":cnext<CR>", opts)
 keymap("n", "<Leader>k", ":cprev<CR>", opts)
 keymap("n", "cpb", ":let @+=expand('%')<CR>", opts)
@@ -120,3 +120,11 @@ keymap("n", "<Leader>5", ":lua require('harpoon.ui').nav_file(5)<CR>", opts)
 
 -- UndoTree
 keymap("n", "<Leader>u", "<cmd>UndotreeToggle<cr>", opts)
+
+-- override default bindings for vim-gh-line
+vim.g["gh_line_map_default"] = 0
+vim.g["gh_repo_map_default"] = 0
+vim.g["gh_line_blame_map_default"] = 0
+vim.g["gh_line_map"] = '<leader>o'
+vim.g["gh_repo_map"] = '<leader>r'
+vim.g["gh_line_blame_map"] = '<leader>z'

@@ -18,6 +18,7 @@ require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 	"tpope/vim-fugitive",
 	"tpope/vim-commentary",
+	"ruanyl/vim-gh-line",
 	"lewis6991/gitsigns.nvim",
 	"christoomey/vim-system-copy",
 	"christoomey/vim-tmux-navigator",
@@ -25,10 +26,18 @@ require("lazy").setup({
 	"windwp/nvim-autopairs",
 	"ThePrimeagen/harpoon",
 	"ThePrimeagen/git-worktree.nvim",
-	"mbbill/undotree",
+	{
+    "mbbill/undotree",
+		event = "VeryLazy",
+  },
 	"ggandor/leap.nvim",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim", -- is this a dependency
+	{
+		"Wansmer/treesj",
+		event = "VeryLazy",
+		requires = { "nvim-treesitter/nvim-treesitter" },
+	},
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
@@ -80,7 +89,7 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	-- "jose-elias-alvarez/null-ls.nvim",
-  "nvimtools/none-ls.nvim",
+	"nvimtools/none-ls.nvim",
 	"simrat39/rust-tools.nvim",
 	{
 		"mrcjkb/rustaceanvim",
