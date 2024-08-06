@@ -18,7 +18,10 @@ require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 	"tpope/vim-fugitive",
 	"tpope/vim-commentary",
-	"ruanyl/vim-gh-line",
+	{
+		"ruanyl/vim-gh-line",
+		event = "VeryLazy",
+	},
 	"lewis6991/gitsigns.nvim",
 	"christoomey/vim-system-copy",
 	"christoomey/vim-tmux-navigator",
@@ -27,9 +30,9 @@ require("lazy").setup({
 	"ThePrimeagen/harpoon",
 	"ThePrimeagen/git-worktree.nvim",
 	{
-    "mbbill/undotree",
+		"mbbill/undotree",
 		event = "VeryLazy",
-  },
+	},
 	"ggandor/leap.nvim",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim", -- is this a dependency
@@ -42,11 +45,13 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
-	-- {
-	--   'Wansmer/treesj',
-	--   keys = { '<Leader>tt', '<space>m' },
-	--   dependencies = { 'nvim-treesitter/nvim-treesitter' },
-	-- },
+	"tpope/vim-dadbod",
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+	},
 	{
 		"kylechui/nvim-surround",
 		event = "VeryLazy",

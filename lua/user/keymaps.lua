@@ -26,13 +26,13 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 
 -- Resize splits
-keymap("n", "<c-w>=", ":resize +2<CR>", opts)
-keymap("n", "<c-w>-", ":resize -2<CR>", opts)
-keymap("n", "<c-w>,", ":vertical resize -2<CR>", opts)
-keymap("n", "<c-w>.", ":vertical resize +2<CR>", opts)
+keymap("n", "≠", ":resize +2<CR>", opts)
+keymap("n", "–", ":resize -2<CR>", opts)
+keymap("n", "≥", ":vertical resize -2<CR>", opts)
+keymap("n", "≤", ":vertical resize +2<CR>", opts)
 
 -- Zoom buffer
-keymap("n", "<Leader>-", ":wincmd _<cr>:wincmd \\|<cr>", opts)
+keymap("n", "<Leader->", ":wincmd _<cr>:wincmd \\|<cr>", opts)
 keymap("n", "<Leader>=", ":wincmd =<cr>", opts)
 
 -- Navigate buffers
@@ -89,15 +89,15 @@ keymap("n", "<c-g>", ":vertical G<cr>", opts)
 -- Leap
 keymap("n", "z", "<Plug>(leap-forward-to)", opts)
 keymap("n", "Z", "<Plug>(leap-backward-to)", opts)
-keymap("n", "m", "<Plug>(leap-forward-till)", opts)
-keymap("n", "M", "<Plug>(leap-backward-till)", opts)
+keymap("n", "<Leader>z", "<Plug>(leap-forward-till)", opts)
+keymap("n", "<Leader>Z", "<Plug>(leap-backward-till)", opts)
 
 -- Telescope
 keymap("n", "<c-p>", "<cmd>Telescope git_files<cr>", opts)
 keymap("n", "<c-f>", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<Leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<Leader>b", "<cmd>Telescope buffers<cr>", opts)
-keymap("n", "<c-b>", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
+keymap("n", "<Leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", opts)
 keymap("n", "<Leader>rf", "<cmd>Telescope lsp_references<cr>", opts)
 keymap("n", "<Leader>m", "<cmd>Telescope keymaps<cr>", opts)
 keymap("n", "<Leader>th", "<cmd>Telescope help_tags<cr>", opts)
@@ -127,4 +127,4 @@ vim.g["gh_repo_map_default"] = 0
 vim.g["gh_line_blame_map_default"] = 0
 vim.g["gh_line_map"] = '<leader>o'
 vim.g["gh_repo_map"] = '<leader>r'
-vim.g["gh_line_blame_map"] = '<leader>z'
+-- vim.g["gh_line_blame_map"] = '<leader>z'
