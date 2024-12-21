@@ -6,8 +6,8 @@ local servers = {
   "eslint",
   "tailwindcss",
   "cssls",
-  "solargraph",
   "rust_analyzer",
+  "svelte",
 }
 
 local settings = {
