@@ -1,9 +1,0 @@
-{
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": ["javascript", "jsx"],
-  "eslint.format.enable": true,
-  "javascript.suggest.autoImports": true,
-  "typescript.preferences.includePackageJsonAutoImports": "on",
-  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "coc.preferences.jumpCommand": "edit",
-}
