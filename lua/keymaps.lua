@@ -3,6 +3,11 @@
 
 local opts = { noremap = true, silent = true }
 
+-- Load file / line
+vim.keymap.set('n', '<leader>x', "<cmd>source %<cr>")
+vim.keymap.set('n', '<leader>X', ":.lua<cr>")
+vim.keymap.set('v', '<leader>X', ":lua<cr>")
+
 -- Visual --
 -- Stay in indent mode
 vim.keymap.set('v', '>', '>gv', opts)
