@@ -66,10 +66,8 @@ return {
         -- Accept ([y]es) the completion.
         --  This will auto-import if your LSP supports it.
         --  This will expand snippets if the LSP sent a snippet.
-        ['<C-y>'] = cmp.mapping.confirm { select = false },
-        ['<CR>'] = cmp.mapping.confirm { select = false },
-
         -- Set `select` to `false` to only confirm explicitly selected items.
+        ['<C-y>'] = cmp.mapping.confirm { select = false },
         -- ['<CR>'] = cmp.mapping.confirm { select = false },
 
         -- If you prefer more traditional completion keymaps,
