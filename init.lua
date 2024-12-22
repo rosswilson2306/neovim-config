@@ -17,9 +17,11 @@
 
 --]]
 
-require 'options'
-require 'keymaps'
-require 'autocommands'
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Print function
 P = function(v)
@@ -67,12 +69,12 @@ require('lazy').setup({
   --
 
   {
-    "linrongbin16/gitlinker.nvim",
-    cmd = "GitLink",
+    'linrongbin16/gitlinker.nvim',
+    cmd = 'GitLink',
     opts = {},
     keys = {
-      { "<leader>gy", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "Yank git link" },
-      { "<leader>go", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
+      { '<leader>gy', '<cmd>GitLink<cr>', mode = { 'n', 'v' }, desc = 'Yank git link' },
+      { '<leader>go', '<cmd>GitLink!<cr>', mode = { 'n', 'v' }, desc = 'Open git link' },
     },
   },
   -- Here is a more advanced example where we pass configuration
@@ -156,40 +158,16 @@ require('lazy').setup({
     },
   },
 
-  --[[
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
-
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
-    end,
-  },
-  ]]
-  --
   {
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000,
-    init = function()
-      -- vim.cmd.colorscheme 'catpuccin'
-
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
-    end,
     config = function()
       require('catppuccin').setup {
         flavour = 'macchiato',
       }
+      vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.hi 'Comment gui=none'
     end,
   },
   -- Highlight todo, notes, etc in comments
@@ -254,8 +232,6 @@ require('lazy').setup({
     },
   },
 })
-
-vim.cmd.colorscheme 'catppuccin'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
