@@ -71,7 +71,6 @@ vim.keymap.set('n', '<Leader>tt', ':TSJToggle<CR>', opts)
 vim.keymap.set('n', '<Leader>j', ':cnext<CR>', opts)
 vim.keymap.set('n', '<Leader>k', ':cprev<CR>', opts)
 vim.keymap.set('n', '<Leader>cb', ":let @+=expand('%')<CR>", opts)
-vim.keymap.set('n', '<Leader>ce', 'v$hcp', { noremap = false, silent = true }) -- needed to be recursive to use plugin mapping
 
 -- Fugitive
 vim.keymap.set('n', '<c-g>', ':vertical G<cr>', opts)
