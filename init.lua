@@ -20,8 +20,8 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
 -- Print function
@@ -32,12 +32,12 @@ end
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
   if vim.v.shell_error ~= 0 then
-    error('Error cloning lazy.nvim:\n' .. out)
+    error("Error cloning lazy.nvim:\n" .. out)
   end
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
@@ -53,14 +53,14 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require('lazy').setup({
+require("lazy").setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'ThePrimeagen/harpoon',
-  'tpope/vim-fugitive',
-  'christoomey/vim-system-copy',
-  'christoomey/vim-tmux-navigator',
-  'ggandor/leap.nvim',
+  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  "ThePrimeagen/harpoon",
+  "tpope/vim-fugitive",
+  "christoomey/vim-system-copy",
+  "christoomey/vim-tmux-navigator",
+  "ggandor/leap.nvim",
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -70,12 +70,12 @@ require('lazy').setup({
   --
 
   {
-    'linrongbin16/gitlinker.nvim',
-    cmd = 'GitLink',
+    "linrongbin16/gitlinker.nvim",
+    cmd = "GitLink",
     opts = {},
     keys = {
-      { '<leader>gy', '<cmd>GitLink<cr>', mode = { 'n', 'v' }, desc = 'Yank git link' },
-      { '<leader>go', '<cmd>GitLink!<cr>', mode = { 'n', 'v' }, desc = 'Open git link' },
+      { "<leader>gy", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "Yank git link" },
+      { "<leader>go", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
     },
   },
   -- Here is a more advanced example where we pass configuration
@@ -84,44 +84,44 @@ require('lazy').setup({
   --
   -- See `:help gitsigns` to understand what the configuration keys do
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     opts = {
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
       },
     },
   },
   {
-    'Wansmer/treesj',
-    event = 'VeryLazy',
-    requires = { 'nvim-treesitter/nvim-treesitter' },
+    "Wansmer/treesj",
+    event = "VeryLazy",
+    requires = { "nvim-treesitter/nvim-treesitter" },
     config = function()
-      require('treesj').setup {
+      require("treesj").setup {
         max_join_length = 300,
         use_default_keymaps = false,
       }
     end,
   },
-  'tpope/vim-dadbod',
+  "tpope/vim-dadbod",
   {
-    'kristijanhusak/vim-dadbod-ui',
-    'kristijanhusak/vim-dadbod-completion',
+    "kristijanhusak/vim-dadbod-ui",
+    "kristijanhusak/vim-dadbod-completion",
     dependencies = { {
-      ft = { 'sql', 'mysql', 'plsql' },
+      ft = { "sql", "mysql", "plsql" },
       lazy = true,
     } },
   },
   {
-    'mbbill/undotree',
-    event = 'VeryLazy',
+    "mbbill/undotree",
+    event = "VeryLazy",
   },
   {
-    'mrcjkb/rustaceanvim',
-    version = '^5', -- Recommended
+    "mrcjkb/rustaceanvim",
+    version = "^5", -- Recommended
     lazy = false, -- This plugin is already lazy
   },
 
@@ -149,40 +149,40 @@ require('lazy').setup({
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
     -- used for completion, annotations and signatures of Neovim apis
-    'folke/lazydev.nvim',
-    ft = 'lua',
+    "folke/lazydev.nvim",
+    ft = "lua",
     opts = {
       library = {
         -- Load luvit types when the `vim.uv` word is found
-        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+        { path = "luvit-meta/library", words = { "vim%.uv" } },
       },
     },
   },
 
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     config = function()
-      require('catppuccin').setup {
-        flavour = 'macchiato',
+      require("catppuccin").setup {
+        flavour = "macchiato",
       }
-      vim.cmd.colorscheme 'catppuccin'
-      vim.cmd.hi 'Comment gui=none'
+      vim.cmd.colorscheme "catppuccin"
+      vim.cmd.hi "Comment gui=none"
     end,
   },
   -- Highlight todo, notes, etc in comments
   {
-    'folke/todo-comments.nvim',
-    event = 'VimEnter',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    "folke/todo-comments.nvim",
+    event = "VimEnter",
+    dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
   {
-    'kylechui/nvim-surround',
-    event = 'VeryLazy',
+    "kylechui/nvim-surround",
+    event = "VeryLazy",
     config = function()
-      require('nvim-surround').setup {
+      require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
       }
     end,
@@ -206,7 +206,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  { import = 'custom.plugins' },
+  { import = "custom.plugins" },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
@@ -217,19 +217,19 @@ require('lazy').setup({
     -- If you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
     },
   },
 })
