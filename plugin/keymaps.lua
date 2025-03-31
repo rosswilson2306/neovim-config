@@ -17,8 +17,8 @@ vim.keymap.set("v", "<", "<gv", opts)
 -- Move text up and down
 vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", opts)
-vim.keymap.set("x", "∆", ":move '>+1<CR>gv-gv", opts)
-vim.keymap.set("x", "˚", ":move '<-2<CR>gv-gv", opts)
+vim.keymap.set("x", "<M-j>", ":move '>+1<CR>gv-gv", opts)
+vim.keymap.set("x", "<M-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Insert
 vim.keymap.set("i", "<C-h>", "<esc>ha", opts)
@@ -59,8 +59,8 @@ vim.keymap.set("n", "<leader>T", "<C-w>T", { desc = "Send to tab" })
 vim.keymap.set("n", "<leader>gt", "<C-w>gt", { desc = "Cycle tabs" })
 
 -- Resize splits
-vim.keymap.set("n", "≠", ":resize +2<CR>", opts)
-vim.keymap.set("n", "–", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<M-+>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<M-->", ":resize -2<CR>", opts)
 vim.keymap.set("n", "≥", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "≤", ":vertical resize +2<CR>", opts)
 
@@ -70,8 +70,8 @@ vim.keymap.set("n", "˙", ":bprevious<CR>", opts)
 
 vim.keymap.set("n", "<Leader>tr", ":set relativenumber!<CR>", opts)
 vim.keymap.set("n", "<Leader>tw", ":set nowrap!<CR>", opts)
-vim.keymap.set("n", "∆", ":m .+1<CR>==", opts)
-vim.keymap.set("n", "˚", ":m .-2<CR>==", opts)
+vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", opts)
+vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", opts)
 vim.keymap.set("n", "<Leader>tt", ":TSJToggle<CR>", opts)
 vim.keymap.set("n", "<Leader>j", ":cnext<CR>", opts)
 vim.keymap.set("n", "<Leader>k", ":cprev<CR>", opts)
