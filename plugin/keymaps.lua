@@ -59,10 +59,10 @@ vim.keymap.set("n", "<leader>T", "<C-w>T", { desc = "Send to tab" })
 vim.keymap.set("n", "<leader>gt", "<C-w>gt", { desc = "Cycle tabs" })
 
 -- Resize splits
-vim.keymap.set("n", "<M-+>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<M-=>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<M-->", ":resize -2<CR>", opts)
-vim.keymap.set("n", "≥", ":vertical resize -2<CR>", opts)
-vim.keymap.set("n", "≤", ":vertical resize +2<CR>", opts)
+vim.keymap.set("n", "<M-,>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<M-.>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 vim.keymap.set("n", "¬", ":bnext<CR>", opts)
